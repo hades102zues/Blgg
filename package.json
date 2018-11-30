@@ -1,0 +1,26 @@
+{
+  "name": "blgg",
+  "version": "1.0.0",
+  "description": "An SSR Blog website built with nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hades102zues/Blgg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hades102zues/Blgg/issues"
+  },
+  "homepage": "https://github.com/hades102zues/Blgg#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}
