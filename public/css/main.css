@@ -14,7 +14,7 @@ a:visited{
 }
 
 .container{
-	width:95%;
+	width:85%;
 	margin:0 auto;
 	overflow: hidden;
 }
@@ -60,12 +60,12 @@ a:visited{
 	
 }
 
+.main-header__item:hover,
+.main-header__item:active,
 .main-header__item.active{
 	border-bottom:6px solid #e91e63;
 	background-color: green;
 }
-
-
 
 
 .main-header__item a{
