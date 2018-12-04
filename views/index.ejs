@@ -1,0 +1,82 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+<body>
+
+	<%- include('includes/navigation.ejs') %> 
+
+	<section class="showcase">
+		<div class="container">
+			<div class="showcase__circle-logo">B</div>
+			<h1>Perfect Blog Platform</h1>
+		</div>
+	</section>
+
+	<main class="top-blog-section">	
+	   <div class="container">
+	   	   <h2>Top Blogs</h2>
+
+	   	   <div style="width:75%; border: 1px solid #ccc"></div>
+
+	   	   <section class="top-blog-section__left-side-panel">
+
+	   	   	<% for(var i=0; i<4; i++){ %>
+	   	   	
+	   	   	<article class="top-blog-section__item">
+
+	   	   		<div class=" top-blog-section__image">
+	   	   			
+	   	   		</div>
+
+				<div class = "top-blog-section__text">
+					<h3>Title</h4>
+					<h5>by User</h4>
+					<h4>Posted on Date</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut
+				    </p>
+				</div>
+				
+			</article> 
+	   	   	<% } %>
+	   	   </section>
+			
+
+			<aside class="right-side-panel">
+					 <div class="category">
+					 	<h3>Categories</h3>
+					 
+								<div class="category__topics-1">
+								   <ul>
+									<li>celebrities</li>
+									<li>NSFW</li>
+									<li>Cash</li>
+								  </ul>
+								</div>
+								<div class="category__topics-2">
+								  <ul>
+									<li>Famous</li>
+									<li>NSFW</li>
+									<li>Cash</li>
+								  </ul>
+								</div>
+					</div>
+					<div class="top-users">
+						<h3>Top Users</h3>
+						<ul>
+							<li>Kakashi</li>
+							<li>Light</li>
+							<li>DontCallmee_furry</li>
+							<li>I Live</li>
+							<li>CreepyUser</li>
+						</ul>
+					</div>
+     		</aside>		
+	   </div>
+	</main>
+
+	
+	<footer>
+		<p>Bleague &copy;2018. All rights reserved.</p>
+	</footer>
+<%- include('includes/end.ejs') %>
