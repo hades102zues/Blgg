@@ -6,9 +6,9 @@
 
 	<%- include('includes/navigation.ejs') %>
 
-	<div class="login-card">
+	<div class="login-card" style="height: 60vh">
 		<header class="login-card__title">
-			<h1>Login</h1>
+			<h1>Sign-up</h1>
 		</header>
 
 		<form action="/login" method="POST">
@@ -20,16 +20,16 @@
 				<input type="password" name="password" id="password"
 				placeholder="Password">
 			</div>
+			<div class="login-control">
+				<input type="password" name="password" id="password"
+				placeholder="Full Name">
+			</div>
 
 			<div class="login-control">
 				<button class="btn btn-green" type="submit">Submit</button>
 		    </div>
 
 		</form>
-
-		<header class="login-card__title">
-			<a href="/signup"><h5>New User? Sign-up Now!</h5></a>
-		</header>
 	</div>
 	
 
