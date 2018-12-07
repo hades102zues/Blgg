@@ -7,6 +7,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const homePageRoute= require('./routes/homepage.js');
 const loginPageRoute = require('./routes/login-page.js');
+const userRoute = require('./routes/users');
 
 
 app.use(bodyParser.urlencoded({extended:false}));
@@ -16,6 +17,10 @@ app.set('views', 'views');
 
 app.use(homePageRoute);
 app.use(loginPageRoute);
+app.use(userRoute);
+
+
+
 app.use('/', (req, res, next)=>{
 	res.render('404',{ 
 		  path: '',
