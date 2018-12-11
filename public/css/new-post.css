@@ -1,10 +1,81 @@
 
-main
+
 .new-post{
 	border:1px solid #009668;
-	width:70%;
+	width:55%;
 	margin-top: 1.5rem;
-	padding-top: 2.5rem;
+	padding-top: 1.5rem;
 	padding-left: 1rem;
-		background-color:white;
+	background-color:white;
+	color:#333;
+}
+
+.new-post header{
+	margin-bottom:2rem ;
+	font-size: 2.2rem;
+}
+
+.form-control{
+	width:70%;
+	margin-bottom: 1.5rem;
+	margin-left:2rem;
+}
+.form-control label{
+	font-size: 1.2rem;
+	font-weight: bold;
+	
+}
+
+.form-control input[type="text"],
+.form-control textarea{
+	display: block;
+	width:100%;
+	margin-top: 1rem;
+	border:none;
+	background-color: #ccc;
+	padding-left: 0.5rem;
+}
+
+.form-control input[type="text"]{
+	height:2rem;
+}
+
+.form-control textarea{
+	height:5.7rem;
+	padding-top: 0.5rem;
+}
+
+form button[type="submit"]{
+	height:2.2rem;
+	width:15%;
+	border: none;
+	display: block;
+	background-color: #009668;
+	color:white;
+	margin-left:2rem;
+	margin-bottom: 2.5rem;
+
+}
+
+@media all and (max-width: 780px){
+	.new-post{
+		width:65%;
+	}
+
+	form button[type="submit"]{
+		width:25%;
+	}
+}
+
+
+@media all and (max-width: 550px){
+	.new-post{
+		width:75%;
+	}
+}
+
+@media all and (max-width: 450px){
+	.new-post{
+		width:95%;
+	}
 }

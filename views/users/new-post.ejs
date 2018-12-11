@@ -10,25 +10,26 @@
 		  <div class="new-post">
 			
 			  <header>
-				<h3>New post</h3>
+				<h3>New Post</h3>
 			  </header>
 
-			  <form>
+			  <form action="/user/new-post" method="POST">
 			  	<div class="form-control">
 			  		<label for="title">Title</label>
 			  		<input type="text" name="title" id="title">
 			  	</div>
 
 			  	<div class="form-control">
-			  		<label for="image">Image</label>
+			  		<label for="image">ImageUrl</label>
 			  		<input type="text" name="imageUrl" id="image">
 			  	</div>
 
 			  	<div class="form-control">
 			  		<label for="content">Content</label>
-			  		<textarea id="content"></textarea>
+			  		<textarea name="description" id="content" rows="4" cols="50"></textarea>
 			  	
 			  	</div>
+			  
 			  	<button type="submit">Add Post</button>
 			  </form>
 

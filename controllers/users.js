@@ -4,3 +4,9 @@ exports.getNewPost = (req, res, next)=>{
 		path: '/new-post'
 	});
 };
+
+
+exports.postNewPost = (req, res, next)=>{
+	console.log(req.body);
+	res.redirect('/');
+};
