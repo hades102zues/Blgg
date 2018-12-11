@@ -1,0 +1,15 @@
+.post-list{
+	width:50%;
+	margin-top: 2.5rem; 
+	padding-top: 1rem;
+
+}
+
+.post-list__post{
+	width:100%;
+	background-color: white;
+	padding-bottom: 2rem;
+	padding-left: 2.2rem;
+	margin-bottom: 4vh;
+	color:#333;
+}

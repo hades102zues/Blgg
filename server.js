@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path= require('path');
 const bodyParser = require('body-parser');
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(path.dirname(process.mainModule.filename), 'public')));
 
 
 const homePageRoute= require('./routes/homepage.js');
