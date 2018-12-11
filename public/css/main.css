@@ -1,6 +1,7 @@
 *{
 	padding:0;
 	margin:0;
+	box-sizing: border-box;
 }
 body{
    font-family: sans-serif;
@@ -8,13 +9,14 @@ body{
 }
 a{
 	text-decoration: none;
+	
 }
 a:visited{
 	color:none;
 }
 
 .container{
-	width:85%;
+	width:90%;
 	margin:0 auto;
 	overflow: hidden;
 }

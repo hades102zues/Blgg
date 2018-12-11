@@ -5,7 +5,10 @@ const path = require('path');
 
 router.get('/',(req, res)=>{
 	
-	res.render('index', {path:'/'});
+	res.render('index', {
+		path:'/',
+		title: 'Home'
+	});
 });
 
 
