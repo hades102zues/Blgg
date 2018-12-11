@@ -1,15 +1,30 @@
+.page{
+	position: relative;
+	height:4.5rem;
+	left: 0;
+	background-color: #547490;
+	width:20%;
+	color:white;
+	padding-top: 1.5rem;
+	vertical-align: center;
+	padding-left:2rem;
+}
+.page h2{
+	font-size: 2.2rem;
+}
+
 .post-list{
-	width:50%;
 	margin-top: 2.5rem; 
 	padding-top: 1rem;
 
 }
 
 .post-list__post{
-	width:100%;
+	width:50%;
 	background-color: white;
 	padding-bottom: 2rem;
 	padding-left: 2.2rem;
-	margin-bottom: 4vh;
+	margin:0 auto 4vh auto;
 	color:#333;
+
 }
