@@ -10,3 +10,10 @@ exports.postNewPost = (req, res, next)=>{
 	console.log(req.body);
 	res.redirect('/');
 };
+
+exports.getPosts = (req, res, next)=>{
+	res.render('users/posts', {
+		title: 'Posts',
+		path: '/posts'
+	});
+};
