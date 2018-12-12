@@ -3,10 +3,13 @@
 	margin:0;
 	box-sizing: border-box;
 }
+
 body{
    font-family: sans-serif;
    background-color: #e1f5fe;
+   
 }
+
 a{
 	text-decoration: none;
 	color:white;
@@ -43,7 +46,7 @@ a:visited{
 }
 .main-header__nav{
 	height:100%;
-	border:1px solid blue;
+	
 }
 
 .main-header__list{
@@ -96,15 +99,19 @@ a:visited{
 }
 
 .side-drawer{
-	position: absolute;
+	position: fixed;
 	z-index: 5;
-	background-color: #009668;
 	top:0;
 	left:0;
+	bottom:0;
+	right:0;
 	width:23%;
-	height: 100vh;
-	transition:transform 1s ease-in;
+	transition:transform 0.3s ease-in;
 	transform: translateX(-100%);
+}
+
+.side-drawer-green{
+	background-color: #009668;
 }
 .side-drawer__list{
 	display: flex;
@@ -134,6 +141,19 @@ background-color: green;
 
 .side-drawer__item a{
 	display: block;
+}
+
+.backdrop{
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	bottom:0;
+	left: 0;
+	right:0;
+	display:none;
+	
+	background-color: black;
+	opacity: 0.5;
 }
 
 
