@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const path= require('path');
 const bodyParser = require('body-parser');
+
+
+
 app.use(express.static(path.join(path.dirname(process.mainModule.filename), 'public')));
 
 
@@ -9,6 +12,8 @@ const homePageRoute= require('./routes/homepage.js');
 const loginPageRoute = require('./routes/login-page.js');
 const userRoute = require('./routes/users');
 
+
+const db = require('./utilities/util');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.set('view engine', 'ejs');
@@ -27,5 +32,6 @@ app.use('/', (req, res, next)=>{
 		  title: '404'
 	    });
 });
+
 
 app.listen(3000);
