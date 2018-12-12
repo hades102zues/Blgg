@@ -1,23 +1,30 @@
 .login-card{
 	
-	position:absolute;
-	left:50%;
-	transform: translateX(-50%);
-	top:15%;
-	padding-top: 2rem;
-	
+
 	background-color: white;
 	width:560px;
 	max-width: 90%;
-	height: 370px;
+	height: 28rem;
+	margin: 5rem auto 0 auto;
+
+	
+	padding-top: 2rem;
+	
 	
 	border-radius: 3px;
 	box-shadow: 0 2px 3px 2px #ccc;
 }
 
+
+
 .login-card h1,h5{
 	text-align: center;
 	margin-bottom:1rem;
+
+}
+
+.login-card h5{
+	color: purple;
 }
 
 .login-control{
