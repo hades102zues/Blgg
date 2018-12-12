@@ -1,7 +1,7 @@
 exports.getNewPost = (req, res, next)=>{
 	res.render('users/new-post', {
 		title: 'New Post',
-		path: '/new-post'
+		path: '/user/new-post'
 	});
 };
 
@@ -14,6 +14,11 @@ exports.postNewPost = (req, res, next)=>{
 exports.getPosts = (req, res, next)=>{
 	res.render('users/posts', {
 		title: 'Posts',
-		path: '/posts'
+		path: '/user/posts'
 	});
 };
+
+
+exports.getLogout = (req, res, next)=>{
+	res.redirect('/');
+}

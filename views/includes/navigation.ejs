@@ -1,11 +1,25 @@
 <header class="main-header">
 		<div class="container">
-			<h3 class="main-header__logo">Bleague</h3>
+
+
 		  <nav class="main-header__nav">
 			<ul class="main-header__list">
-				<li class="main-header__item <%= path ==='/' ? 'active' : '' %> "><a href="/">HOME</a></li>
-				<li class="main-header__item <%= path==='/login' || path=='/signup' ? 'active' : '' %>"><a href="/login">LOGIN</a>
+
+				<li class="main-header__item logo <%= path ==='/' ? 'active' : '' %> "><a href="/">Bleague</a></li>
+
+				<div class="main-header__features">
+						
+					<li class="main-header__item <%= path==='/login' || path=='/signup' ? 'active' : '' %>"><a href="/login">LOGIN</a>
+
+					<!-- logged in features -->
+					<li class="main-header__item <%= path ==='/user/new-post' ? 'active' : '' %> "><a href="/user/new-post">ADD</a></li>
+					<li class="main-header__item <%= path ==='/user/posts' ? 'active' : '' %> "><a href="/user/posts">FEED</a></li>
+					<li class="main-header__item <%= path ==='/logout' ? 'active' : '' %> "><a href="/logout">LOGOUT</a></li>
+
+				</div>
+				
 			</ul>
 		  </nav>
+
 		</div>
 </header>
