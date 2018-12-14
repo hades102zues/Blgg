@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path= require('path');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 
 
 
@@ -33,8 +34,7 @@ app.use('/', (req, res, next)=>{
 	    });
 });
 
-db.execute('SELECT * FROM user')
-.then((result)=>{
-	console.log(result[0][0].email);
+db.select().from('user').then(rows=>{
+	console.log(rows);
 });
 app.listen(3000);
