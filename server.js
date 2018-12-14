@@ -6,7 +6,8 @@ const session = require('express-session');
 
 
 
-app.use(express.static(path.join(path.dirname(process.mainModule.filename), 'public')));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 const homePageRoute= require('./routes/homepage.js');
@@ -16,6 +17,12 @@ const userRoute = require('./routes/users');
 
 const db = require('./utilities/util');
 
+app.use(session({
+  secret: 'bl2-;!!$-laaj@#/as',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}));
 app.use(bodyParser.urlencoded({extended:false}));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
