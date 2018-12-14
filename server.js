@@ -33,5 +33,8 @@ app.use('/', (req, res, next)=>{
 	    });
 });
 
-
+db.execute('SELECT * FROM user')
+.then((result)=>{
+	console.log(result[0][0].email);
+});
 app.listen(3000);
