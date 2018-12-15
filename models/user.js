@@ -1,10 +1,17 @@
-const db = require('../ultilities/util');
+const db = require('../utilities/util');
+const users = 'users';
 
 
 class User {
-	constructor({email, password}){
-		this.email = email;
-		this.pass= password;
+	
+	static save({fullname, email, password}){
+		
+		db('users').insert({email, password}).catch(err=>console.log(err));
+		
+	}
+
+	static fetch(em){
+		db(users).select().where({email : em});
 	}
 
 }

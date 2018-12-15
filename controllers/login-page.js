@@ -1,3 +1,5 @@
+const User = require('../models/user');//import class USer
+
 exports.getLoginPage= (req, res, next)=>{
 	res.render('login',{
 		title: 'Login',
@@ -19,7 +21,6 @@ exports.getSignUpPage= (req, res, next)=>{
 };
 
 exports.postSignUpPage = (req, res, next)=>{
-	const data = req.body; //get user data
-	console.log(req.body);
+	User.save(req.body);
 	res.redirect('/');
 };
