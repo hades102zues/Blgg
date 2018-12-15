@@ -11,7 +11,14 @@ class User {
 	}
 
 	static fetch(em){
-		db(users).select().where({email : em});
+		db(users).select().where({email : em})
+		.then( row=>{ //[..]
+			if(row){
+				return true;
+			}else{
+				return false;
+			}
+		});
 	}
 
 }

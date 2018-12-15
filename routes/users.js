@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userControllers = require('../controllers/users');
+const isAuthMiddleWare = require('../utilities/auth');
 
 router.get('/user/new-post', userControllers.getNewPost);
 router.post('/user/new-post', userControllers.postNewPost);

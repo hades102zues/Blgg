@@ -8,15 +8,20 @@
 				<li class="main-header__item logo <%= path ==='/' ? 'active' : '' %> "><a href="/">Bleague</a></li>
 
 				<div class="main-header__features">
-						
-					<li class="main-header__item <%= path==='/login' || path=='/signup' ? 'active' : '' %>"><a href="/login">LOGIN</a>
+					
+					<% if (!isAuth) { %>
+					<li class="main-header__item <%= path==='/login' || path=='/signup' ? 'active' : '' %>"><a href="/login">LOGIN</a></li>
+					<%}%>
+					<% if (isAuth) { %>
 
-					<!-- logged in features -->
-					<li class="main-header__item <%= path ==='/user/new-post' ? 'active' : '' %> "><a href="/user/new-post">ADD</a></li>
-					<li class="main-header__item <%= path ==='/user/posts' ? 'active' : '' %> "><a href="/user/posts">FEED</a></li>
+						<!-- logged in features -->
+						<li class="main-header__item <%= path ==='/user/new-post' ? 'active' : '' %> "><a href="/user/new-post">ADD</a></li>
+						<li class="main-header__item <%= path ==='/user/posts' ? 'active' : '' %> "><a href="/user/posts">FEED</a></li>
 
-					<li class="main-header__item <%= path ==='/user/profile' ? 'active' : '' %> "><a href="/user/profile">PROFILE</a></li>
-					<li class="main-header__item <%= path ==='/logout' ? 'active' : '' %> "><a href="/logout">LOGOUT</a></li>
+						<li class="main-header__item <%= path ==='/user/profile' ? 'active' : '' %> "><a href="/user/profile">PROFILE</a></li>
+						<li class="main-header__item <%= path ==='/logout' ? 'active' : '' %> "><a href="/logout">LOGOUT</a></li>
+					<% } %>
+					
 
 				</div>
 			
@@ -38,16 +43,18 @@
 				<li class="side-drawer__item <%= path ==='/' ? 'active' : '' %> "><a href="/">Bleague</a></li>
 
 				<div class="side-drawer__features">
-						
+					<% if (!isAuth) { %>
 					<li class="side-drawer__item <%= path==='/login' || path=='/signup' ? 'active' : '' %>"><a href="/login">LOGIN</a>
+					<%}%>
 
+					<% if (isAuth) { %>
 					<!-- logged in features -->
 					<li class="side-drawer__item <%= path ==='/user/new-post' ? 'active' : '' %> "><a href="/user/new-post">ADD</a></li>
 					<li class="side-drawer__item <%= path ==='/user/posts' ? 'active' : '' %> "><a href="/user/posts">FEED</a></li>
 
 					<li class="side-drawer__item <%= path ==='/user/profile' ? 'active' : '' %> "><a href="/user/profile">PROFILE</a></li>
 					<li class="side-drawer__item <%= path ==='/logout' ? 'active' : '' %> "><a href="/logout">LOGOUT</a></li>
-
+					<%}%>
 				</div>
 			
 			</ul>

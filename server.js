@@ -26,10 +26,9 @@ const sessionStore = new MySQLStore(options);
 
 
 app.use(session({
-  secret: 'bl2-;!!$-laaj@#/as',
+  secret: 'bl2dds',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true },
   store: sessionStore
 }));
 app.use(bodyParser.urlencoded({extended:false}));
@@ -46,7 +45,8 @@ app.use(userRoute);
 app.use('/', (req, res, next)=>{
 	res.render('404',{ 
 		  path: '',
-		  title: '404'
+		  title: '404',
+		  isAuth: req.session.isAuth
 	    });
 });
 
