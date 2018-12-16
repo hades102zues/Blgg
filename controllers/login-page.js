@@ -1,5 +1,7 @@
 const User = require('../models/user');//import class USer
 
+
+
 exports.getLoginPage= (req, res, next)=>{
 	res.render('login',{
 		title: 'Login',

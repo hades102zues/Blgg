@@ -22,7 +22,7 @@ exports.getPosts = (req, res, next)=>{
 };
 
 
-exports.getLogout = (req, res, next)=>{
-	//unset the auth session
+exports.getLogout =(req,res, next)=>{
+	req.session.destroy();
 	res.redirect('/');
-}
+};
