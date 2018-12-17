@@ -8,12 +8,10 @@ exports.getNewPost = (req, res, next)=>{
 
 
 exports.postNewPost = (req, res, next)=>{
-	console.log(req.body);
 	res.redirect('/');
 };
 
 exports.getPosts = (req, res, next)=>{
-	console.log('POSTS', req.session.isAuth);
 	res.render('users/posts', {
 		title: 'Posts',
 		path: '/user/posts',

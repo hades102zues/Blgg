@@ -30,6 +30,5 @@ exports.postSignUpPage = (req, res, next)=>{
 	req.session.save(()=>{
 		res.redirect('/user/posts');
 	});
-	
-	
+		
 };
