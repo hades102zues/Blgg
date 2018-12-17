@@ -19,7 +19,6 @@ class User {
 						email: email,
 						password: hash
 					})
-					.then();
 					.catch(err => console.log('inserting into db: ', err));
 				});
         	}
