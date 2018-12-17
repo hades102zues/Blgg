@@ -36,7 +36,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use((req, res, next)=>{
-	res.locals.isAuth = req.session.isAuth
+	res.locals.isAuth = req.session.isAuth;
 	next();
 });
 
@@ -50,7 +50,7 @@ app.use('/', (req, res, next)=>{
 	res.render('404',{ 
 		  path: '',
 		  title: '404',
-		  isAuth: req.session.isAuth
+		  
 	    });
 });
 

@@ -2,7 +2,7 @@ exports.getNewPost = (req, res, next)=>{
 	res.render('users/new-post', {
 		title: 'New Post',
 		path: '/user/new-post',
-		isAuth: req.session.isAuth
+		
 	});
 };
 
@@ -15,7 +15,7 @@ exports.getPosts = (req, res, next)=>{
 	res.render('users/posts', {
 		title: 'Posts',
 		path: '/user/posts',
-		isAuth: req.session.isAuth
+		
 	});
 };
 

@@ -5,20 +5,21 @@ const users = 'users';
 
 class User {
 	
-	static save({fullname, email, password}){	
+	static save(req, res, handler){	
        
-        this.fetch(email, (row)=>{
+        this.fetch(req.body.email, (row)=>{
 
         	if(row.length){ //if the array is not empty then ..
-        		console.log('already exsts');
+        		console.log('user already exsts');
         	}else{
         		//add the user to the db
-        		bcrypt.hash(password, 10).then( hash => {
+        		bcrypt.hash(req.body.password, 10).then( hash => {
 					db(users).insert({
-						name: fullname,
-						email: email,
+						name: req.body.fullname,
+						email: req.body.email,
 						password: hash
 					})
+					.then(()=>{ handler() })//execute middleware commands
 					.catch(err => console.log('inserting into db: ', err));
 				});
         	}
