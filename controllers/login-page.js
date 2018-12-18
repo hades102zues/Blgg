@@ -51,10 +51,32 @@ exports.getSignUpPage= (req, res, next)=>{
 };
 
 exports.postSignUpPage = (req, res, next)=>{
-	User.save(req, res, ()=>{
-				req.session.isAuth=true;
-				req.session.save(()=>{
-					res.redirect('/user/posts');
-			  	});	
-			});
+	User.create(req, res, (row)=>{
+
+	        	if(row.length){ //if the array is not empty then ..
+	        		console.log('user already exsts');
+	        		res.render('signup',{
+						title: 'Signup',
+						path: '/signup',
+						
+					});
+	        	}else{
+	        		//add the user to the db
+	        		bcrypt.hash(req.body.password, 10).then( hash => {
+						db(users).insert({
+							name: req.body.fullname,
+							email: req.body.email,
+							password: hash
+						})
+						.then(()=>{ 
+							req.session.isAuth=true;
+							req.session.save(()=>{
+								res.redirect('/user/posts');
+							})
+						})//execute middleware commands
+						.catch(err => console.log('inserting into db: ', err));
+					});
+	        	}
+	     });
+		
 };

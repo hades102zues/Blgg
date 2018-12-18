@@ -5,7 +5,7 @@ const db = require('../utilities/util');
 module.exports = class Post {
 
 
-	static save(req, handler){
+	static create(req, handler){
 		db('posts').insert({
 			email: req.session.email,
 			title:req.body.title,
@@ -23,7 +23,7 @@ module.exports = class Post {
 		db('posts').select().where({
 			email:req.session.email
 		})
-		.then(()=>{
+		.then((rows)=>{
 			handler();
 		});
 	}
