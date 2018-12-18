@@ -3,13 +3,13 @@ const router = express.Router();
 const userControllers = require('../controllers/users');
 const isAuthMiddleWare = require('../utilities/auth');
 
-router.get('/user/new-post', userControllers.getNewPost);
-router.post('/user/new-post', userControllers.postNewPost);
+router.get('/user/new-post', isAuthMiddleWare, userControllers.getNewPost);
+router.post('/user/new-post', isAuthMiddleWare, userControllers.postNewPost);
 
 
-router.get('/user/posts', userControllers.getPosts);
+router.get('/user/posts', isAuthMiddleWare, userControllers.getPosts);
 
-router.get('/logout', userControllers.getLogout);
+router.get('/logout', isAuthMiddleWare, userControllers.getLogout);
 
 
 module.exports= router;

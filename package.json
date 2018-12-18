@@ -25,6 +25,7 @@
     "express": "^4.16.4",
     "express-mysql-session": "^2.0.1",
     "express-session": "^1.15.6",
+    "express-validation": "^1.0.2",
     "knex": "^0.16.2",
     "mysql2": "^1.6.4"
   },

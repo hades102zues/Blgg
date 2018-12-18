@@ -1,4 +1,5 @@
 const User = require('../models/user');//import class USer
+const bcrypt = require('bcrypt');
 
 
 
@@ -14,10 +15,23 @@ exports.postLoginPage = (req, res, next)=>{
 	User.fetch(req.body.email, (row)=>{
 		if(row.length){//user exists
 			//test to make sure password is correct
-			req.session.isAuth=true;
-				req.session.save(()=>{
-					res.redirect('/user/posts');
-			});	
+			bcrypt.compare(req.body.password, row[0].password)
+			.then(result=>{ //boolean
+					if(result){ //match was succesful
+						req.session.isAuth=true;
+						req.session.save(()=>{
+							res.redirect('/user/posts');
+						})
+					}
+					else{
+						console.log('incorrect password');
+						res.render('login',{
+							title: 'Login',
+							path: '/login',
+						});
+					}
+			});
+			
 		}else{ //user doesnt exist
 			console.log('user does not exist');
 			res.render('login',{
