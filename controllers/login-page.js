@@ -11,9 +11,21 @@ exports.getLoginPage= (req, res, next)=>{
 };
 
 exports.postLoginPage = (req, res, next)=>{
-	//find email in db
-	//if found set req.session.isAuth=true
-	res.redirect('/user/posts');
+	User.fetch(req.body.email, (row)=>{
+		if(row.length){//user exists
+			//test to make sure password is correct
+			req.session.isAuth=true;
+				req.session.save(()=>{
+					res.redirect('/user/posts');
+			});	
+		}else{ //user doesnt exist
+			console.log('user does not exist');
+			res.render('login',{
+				title: 'Login',
+				path: '/login',
+			});
+		}
+	});
 };
 
 exports.getSignUpPage= (req, res, next)=>{
