@@ -1,7 +1,7 @@
 const User = require('../models/user');//import class USer
 const bcrypt = require('bcrypt');
-
-
+const { validationResult } = require('express-validator/check');
+ 
 
 exports.getLoginPage= (req, res, next)=>{
 	res.render('login',{
@@ -19,6 +19,7 @@ exports.postLoginPage = (req, res, next)=>{
 			.then(result=>{ //boolean
 					if(result){ //match was succesful
 						req.session.isAuth=true;
+						req.session.email = req.body.email;
 						req.session.save(()=>{
 							res.redirect('/user/posts');
 						})
@@ -70,6 +71,7 @@ exports.postSignUpPage = (req, res, next)=>{
 						})
 						.then(()=>{ 
 							req.session.isAuth=true;
+							req.session.email = req.body.email;
 							req.session.save(()=>{
 								res.redirect('/user/posts');
 							})
@@ -77,6 +79,6 @@ exports.postSignUpPage = (req, res, next)=>{
 						.catch(err => console.log('inserting into db: ', err));
 					});
 	        	}
-	     });
+    });
 		
 };
