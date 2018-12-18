@@ -4,6 +4,7 @@ const path= require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
+const flash = require('connect-flash');
 
 
 const db = require('./utilities/util');
@@ -31,12 +32,14 @@ app.use(session({
   saveUninitialized: true,
   store: sessionStore
 }));
+app.use(flash());
 app.use(bodyParser.urlencoded({extended:false}));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use((req, res, next)=>{
 	res.locals.isAuth = req.session.isAuth;
+	res.locals.errors=[];
 	next();
 });
 

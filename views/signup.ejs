@@ -10,7 +10,13 @@
 		<header class="login-card__title">
 			<h1>Sign-up</h1>
 		</header>
-
+		<%if(error){%>
+			<div class="error">
+				<p><%=error%></p>
+			</div>
+			
+		<%}%>
+		
 		<form action="/signup" method="POST">
 			
 			<div class="login-control">

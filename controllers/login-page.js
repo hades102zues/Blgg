@@ -6,8 +6,8 @@ const { validationResult } = require('express-validator/check');
 exports.getLoginPage= (req, res, next)=>{
 	res.render('login',{
 		title: 'Login',
-		path: '/login',
-		
+		path: '/login',	
+		error: req.flash('loginErr')
 	});
 };
 
@@ -26,18 +26,24 @@ exports.postLoginPage = (req, res, next)=>{
 					}
 					else{
 						console.log('incorrect password');
+						req.flash('loginErr','Incorrect Password or Email');
 						res.render('login',{
 							title: 'Login',
 							path: '/login',
+							error: req.flash('loginErr')
 						});
 					}
 			});
 			
 		}else{ //user doesnt exist
 			console.log('user does not exist');
+			req.flash('loginErr', 'Incorrect Password or Email');
 			res.render('login',{
 				title: 'Login',
 				path: '/login',
+				error: req.flash('loginErr')
+				
+
 			});
 		}
 	});
@@ -47,7 +53,7 @@ exports.getSignUpPage= (req, res, next)=>{
 	res.render('signup',{
 		title: 'Signup',
 		path: '/signup',
-		
+		error: req.flash('signupErr')
 	});
 };
 
@@ -55,10 +61,12 @@ exports.postSignUpPage = (req, res, next)=>{
 	User.create(req, res, (row)=>{
 
 	        	if(row.length){ //if the array is not empty then ..
+	        		req.flash('signupErr', 'User With That Email Already Exists');
 	        		console.log('user already exsts');
 	        		res.render('signup',{
 						title: 'Signup',
 						path: '/signup',
+						error: req.flash('signupErr')
 						
 					});
 	        	}else{
