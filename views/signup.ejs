@@ -10,12 +10,22 @@
 		<header class="login-card__title">
 			<h1>Sign-up</h1>
 		</header>
+
+		<!--db registration errors-->
 		<%if(error){%>
 			<div class="error">
 				<p><%=error%></p>
 			</div>
 			
 		<%}%>
+
+		<!--validation errors -->
+		<!-- <div class="error">
+			<%for(let mess of valErrors){%>
+				<p><%= mess.%></p>
+			<%}%>
+		</div>
+		 -->
 		
 		<form action="/signup" method="POST">
 			

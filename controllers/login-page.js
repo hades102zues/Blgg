@@ -1,7 +1,7 @@
 const User = require('../models/user');//import class USer
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator/check');
- 
+
 
 exports.getLoginPage= (req, res, next)=>{
 	res.render('login',{
@@ -53,11 +53,17 @@ exports.getSignUpPage= (req, res, next)=>{
 	res.render('signup',{
 		title: 'Signup',
 		path: '/signup',
-		error: req.flash('signupErr')
+		error: req.flash('signupErr'),
+		valErrs: []
+
 	});
 };
 
 exports.postSignUpPage = (req, res, next)=>{
+	const valErrs = validationResult(req);
+
+	//if valerr then render sign up with valErrs passed
+	//else create the user
 	User.create(req, res, (row)=>{
 
 	        	if(row.length){ //if the array is not empty then ..
