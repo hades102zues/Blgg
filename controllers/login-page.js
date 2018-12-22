@@ -53,26 +53,33 @@ exports.getSignUpPage= (req, res, next)=>{
 	res.render('signup',{
 		title: 'Signup',
 		path: '/signup',
-		error: req.flash('signupErr'),
+		error: '',
 		valErrs: []
-
 	});
 };
 
 exports.postSignUpPage = (req, res, next)=>{
-	const valErrs = validationResult(req);
+	const valErrors = validationResult(req);
 
 	//if valerr then render sign up with valErrs passed
-	//else create the user
-	User.create(req, res, (row)=>{
+	if(!valErrors.isEmpty()){
+		res.render('signup',{
+			title: 'Signup',
+			path: '/signup',
+			error: req.flash('signupErr'),
+			valErrs: valErrors.array()
+		});
+
+	}else{
+		User.create(req, res, (row)=>{
 
 	        	if(row.length){ //if the array is not empty then ..
 	        		req.flash('signupErr', 'User With That Email Already Exists');
-	        		console.log('user already exsts');
 	        		res.render('signup',{
 						title: 'Signup',
 						path: '/signup',
-						error: req.flash('signupErr')
+						error: req.flash('signupErr'),
+						valErrs: []
 						
 					});
 	        	}else{
@@ -93,6 +100,9 @@ exports.postSignUpPage = (req, res, next)=>{
 						.catch(err => console.log('inserting into db: ', err));
 					});
 	        	}
-    });
+    	});
+	}
+	//else create the user
+	
 		
 };

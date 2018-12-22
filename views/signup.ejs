@@ -6,7 +6,7 @@
 
 	<%- include('includes/navigation.ejs') %>
 
-	<div class="login-card" style="height: 60vh">
+	<div class="login-card" >
 		<header class="login-card__title">
 			<h1>Sign-up</h1>
 		</header>
@@ -20,12 +20,12 @@
 		<%}%>
 
 		<!--validation errors -->
-		<!-- <div class="error">
-			<%for(let mess of valErrors){%>
-				<p><%= mess.%></p>
+		<div class="error">
+			<%for(let err of valErrs){%>
+				<p><%= err.msg%></p>
 			<%}%>
 		</div>
-		 -->
+		
 		
 		<form action="/signup" method="POST">
 			
