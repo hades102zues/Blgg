@@ -13,6 +13,7 @@ router.get('/user/posts/post/:postid', isAuthMiddleWare, userControllers.getPost
 router.get('/user/posts/edit-post/:postid', isAuthMiddleWare, userControllers.getEditPost);
 router.post('/user/posts/edit-post/:postid', isAuthMiddleWare, userControllers.postEditPost);
 
+router.get('/user/posts/delete-post/:postid', isAuthMiddleWare);
 router.get('/logout', isAuthMiddleWare, userControllers.getLogout);
 
 
