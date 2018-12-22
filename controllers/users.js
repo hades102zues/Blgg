@@ -1,3 +1,5 @@
+const Post = require('../models/post.js');
+
 exports.getNewPost = (req, res, next)=>{
 	res.render('users/new-post', {
 		title: 'New Post',
@@ -8,14 +10,19 @@ exports.getNewPost = (req, res, next)=>{
 
 
 exports.postNewPost = (req, res, next)=>{
-	res.redirect('/');
+	//create the post and return to the feed page
+	Post.create(req, ()=>{
+		res.render('users/posts', {
+			title: 'Posts',
+			path: '/user/posts',
+		});
+	});
 };
 
 exports.getPosts = (req, res, next)=>{
 	res.render('users/posts', {
 		title: 'Posts',
 		path: '/user/posts',
-		
 	});
 };
 

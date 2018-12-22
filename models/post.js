@@ -6,6 +6,7 @@ module.exports = class Post {
 
 
 	static create(req, cb){
+		
 		db('posts').insert({
 			email: req.session.email,
 			title:req.body.title,
