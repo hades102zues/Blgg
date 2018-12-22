@@ -1,6 +1,7 @@
 const User = require('../models/user');//import class USer
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator/check');
+const db = require('../utilities/util');
 
 
 exports.getLoginPage= (req, res, next)=>{
@@ -85,7 +86,7 @@ exports.postSignUpPage = (req, res, next)=>{
 	        	}else{
 	        		//add the user to the db
 	        		bcrypt.hash(req.body.password, 10).then( hash => {
-						db(users).insert({
+						db('users').insert({
 							name: req.body.fullname,
 							email: req.body.email,
 							password: hash
