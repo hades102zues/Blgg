@@ -7,18 +7,24 @@
 	<%- include('../includes/navigation.ejs') %>
 
 <main>
-	<article class="post">
-			<h2> post.title </h2>
 
-			<div class="img-container">
-					<img src= "post.imageurl" alt="an image"/>
-			</div>
+   <%for(let post of userPost){ %>
+		<article class="post">
+				<h2> <%=post.title%> </h2>
 
-			<p class="description">
-				post.description 
-			</p>				
-		<a href="/user/posts/post.postid/edit"> Edit >> </a>
-	</article>
+				<div class="img-container">
+						<img src= "<%=post.imageurl%>" alt="an image"/>
+				</div>
+
+				<p>
+					<%=post.description%>
+				</p>				
+			<a href="/user/posts/edit/<%=post.postid%>"> Edit </a>
+			<form action="" method="">
+				<button type="submit">Delete</button>
+			</form>
+		</article>
+	<%}%>
 </main>
 
 <%- include('../includes/end.ejs') %>

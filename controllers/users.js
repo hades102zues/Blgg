@@ -27,13 +27,24 @@ exports.getPosts = (req, res, next)=>{
 };
 
 exports.getPost = (req, res, next)=>{
-	res.render('users/post',{
-		title: 'Post',
-		path: '/user/posts',
-		//userPosts: posts
+	Post.fetch(req, (post)=>{
+		res.render('users/post',{
+			title: 'Post',
+			path: '/user/posts',
+			userPost: post
+		});
 	});
 };
 
+exports.getEditPost = (req, res, next)=>{
+	Post.fetch(req, (post)=>{
+		res.render('users/edit-post',{
+			title: 'Edit Post',
+			path: '/user/posts',
+			userPost: post
+		});
+	});
+}
 exports.getLogout =(req,res, next)=>{
 	req.session.destroy();
 	res.redirect('/');

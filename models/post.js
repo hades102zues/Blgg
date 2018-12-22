@@ -16,8 +16,14 @@ module.exports = class Post {
 		.then(()=>{ cb() });
 	}
 
-	static fetch(){
-
+	static fetch(req, cb){
+		db('posts').select().where({
+			email:req.session.email,
+			postid: req.params.postid
+		})
+		.then((rows)=>{
+				cb(rows);
+		}).catch(err=>console.log(err));
 	}
 
 	static fetchAll(req, cb){
