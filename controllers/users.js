@@ -26,6 +26,13 @@ exports.getPosts = (req, res, next)=>{
 	});
 };
 
+exports.getPost = (req, res, next)=>{
+	res.render('users/post',{
+		title: 'Post',
+		path: '/user/posts',
+		//userPosts: posts
+	});
+};
 
 exports.getLogout =(req,res, next)=>{
 	req.session.destroy();

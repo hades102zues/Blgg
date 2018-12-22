@@ -8,7 +8,7 @@ router.post('/user/new-post', isAuthMiddleWare, userControllers.postNewPost);
 
 
 router.get('/user/posts', isAuthMiddleWare, userControllers.getPosts);
-//router.get('/user/posts/:postid',isAuthMiddleWare);
+router.get('/user/posts/:postid', isAuthMiddleWare, userControllers.getPost);
 
 router.get('/logout', isAuthMiddleWare, userControllers.getLogout);
 

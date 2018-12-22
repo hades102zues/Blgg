@@ -1,10 +1,24 @@
 <%- include('../includes/head.ejs') %>
 	
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/post.css">
 </head>
 <body>
 	<%- include('../includes/navigation.ejs') %>
 
+<main>
+	<article class="post">
+			<h2> post.title </h2>
 
+			<div class="img-container">
+					<img src= "post.imageurl" alt="an image"/>
+			</div>
+
+			<p class="description">
+				post.description 
+			</p>				
+		<a href="/user/posts/post.postid/edit"> Edit >> </a>
+	</article>
+</main>
 
 <%- include('../includes/end.ejs') %>
