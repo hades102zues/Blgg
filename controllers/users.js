@@ -12,10 +12,7 @@ exports.getNewPost = (req, res, next)=>{
 exports.postNewPost = (req, res, next)=>{
 	//create the post and return to the feed page
 	Post.create(req, ()=>{
-		res.render('users/posts', {
-			title: 'Posts',
-			path: '/user/posts',
-		});
+		res.redirect('/user/posts');
 	});
 };
 
@@ -27,7 +24,6 @@ exports.getPosts = (req, res, next)=>{
 			userPosts: posts
 		});
 	});
-	
 };
 
 

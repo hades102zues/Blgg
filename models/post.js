@@ -25,8 +25,13 @@ module.exports = class Post {
 			email:req.session.email
 		})
 		.then((rows)=>{
-			cb(rows);
-		});
+			if (rows.length){
+				cb(rows);
+			}else{
+				cb([])
+			}
+
+		}).catch(err=>console.log(err));
 	}
 
 }
