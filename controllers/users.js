@@ -20,10 +20,14 @@ exports.postNewPost = (req, res, next)=>{
 };
 
 exports.getPosts = (req, res, next)=>{
-	res.render('users/posts', {
-		title: 'Posts',
-		path: '/user/posts',
+	Post.fetchAll(req, (posts)=>{
+		res.render('users/posts', {
+			title: 'Posts',
+			path: '/user/posts',
+			userPosts: posts
+		});
 	});
+	
 };
 
 
