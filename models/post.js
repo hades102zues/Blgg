@@ -40,4 +40,17 @@ module.exports = class Post {
 		}).catch(err=>console.log(err));
 	}
 
+	static update(req, cb){
+
+		db('posts').update({
+			title:req.body.title,
+			description: req.body.description,
+			imageurl: req.body.imageurl
+		})
+		.where({
+			postid:req.params.postid
+		})
+		.then(()=>{cb()});
+	}
+
 }

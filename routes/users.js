@@ -8,9 +8,10 @@ router.post('/user/new-post', isAuthMiddleWare, userControllers.postNewPost);
 
 
 router.get('/user/posts', isAuthMiddleWare, userControllers.getPosts);
-router.get('/user/posts/:postid', isAuthMiddleWare, userControllers.getPost);
+router.get('/user/posts/post/:postid', isAuthMiddleWare, userControllers.getPost);
 
-router.get('/user/posts/edit/:postid', isAuthMiddleWare, userControllers.getEditPost);
+router.get('/user/posts/edit-post/:postid', isAuthMiddleWare, userControllers.getEditPost);
+router.post('/user/posts/edit-post/:postid', isAuthMiddleWare, userControllers.postEditPost);
 
 router.get('/logout', isAuthMiddleWare, userControllers.getLogout);
 

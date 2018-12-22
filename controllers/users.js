@@ -45,6 +45,12 @@ exports.getEditPost = (req, res, next)=>{
 		});
 	});
 }
+exports.postEditPost = (req, res, next)=>{
+	Post.update(req, ()=>{
+		res.redirect(`/user/posts/post/${req.params.postid}`);
+	});
+
+};
 exports.getLogout =(req,res, next)=>{
 	req.session.destroy();
 	res.redirect('/');
