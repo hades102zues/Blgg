@@ -25,7 +25,7 @@ module.exports = class Post {
 			email:req.session.email
 		})
 		.then((rows)=>{
-			cb();
+			cb(rows);
 		});
 	}
 
