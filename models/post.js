@@ -50,7 +50,18 @@ module.exports = class Post {
 		.where({
 			postid:req.params.postid
 		})
-		.then(()=>{cb()});
+		.then(()=>{cb()})
+		.catch(err=>console.log(err));
+	}
+
+	static delete(req, cb){
+		db('posts').del()
+		.where({
+			postid:req.params.postid
+		})
+		.then(()=>{cb()})
+		.catch(err=>console.log(err))
+
 	}
 
 }

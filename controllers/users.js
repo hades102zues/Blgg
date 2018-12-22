@@ -51,6 +51,12 @@ exports.postEditPost = (req, res, next)=>{
 	});
 
 };
+
+exports.getDeletePost = (req, res, next)=>{
+	Post.delete(req, ()=>{
+		res.redirect('/user/posts');
+	});
+};
 exports.getLogout =(req,res, next)=>{
 	req.session.destroy();
 	res.redirect('/');
