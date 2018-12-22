@@ -61,12 +61,12 @@ exports.getSignUpPage= (req, res, next)=>{
 exports.postSignUpPage = (req, res, next)=>{
 	const valErrors = validationResult(req);
 
-	//if valerr then render sign up with valErrs passed
+	//if validation errors exist then 
 	if(!valErrors.isEmpty()){
 		res.render('signup',{
 			title: 'Signup',
 			path: '/signup',
-			error: req.flash('signupErr'),
+			error: '',
 			valErrs: valErrors.array()
 		});
 
