@@ -1,4 +1,5 @@
 const Post = require('../models/post.js');
+//
 
 exports.getNewPost = (req, res, next)=>{
 	res.render('users/new-post', {
