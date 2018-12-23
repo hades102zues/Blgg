@@ -11,14 +11,21 @@
 				<h1>Login</h1>
 			</header>
 
+			<%if(error){%>
+			<div class="error">
+				<p><%=error%></p>
+			</div>
+			
+			<%}%>
+
 			<form action="/login" method="POST">
 					
 				<div class="login-control">
-					<input type="email" name="email" placeholder="Email" >
+					<input type="email" name="email" placeholder="Email" />
 				</div>
 				<div class="login-control">
 					<input type="password" name="password" id="password"
-					placeholder="Password">
+					placeholder="Password"/>
 				</div>
 
 				<div class="login-control">

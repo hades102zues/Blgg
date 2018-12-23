@@ -7,7 +7,8 @@ router.get('/',(req, res)=>{
 	
 	res.render('index', {
 		path:'/',
-		title: 'Home'
+		title: 'Home',
+		isAuth: req.session.isAuth
 	});
 });
 

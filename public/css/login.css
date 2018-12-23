@@ -1,11 +1,21 @@
+
+.error{
+	width:50%;
+	margin:0 auto;
+	color:black;
+	font-weight: bold;
+	text-align: center;
+	background-color: red;
+	margin-bottom: 1rem;
+}
 .login-card{
 	
 
 	background-color: white;
 	width:560px;
 	max-width: 90%;
-	height: 28rem;
 	margin: 5rem auto 0 auto;
+	padding-bottom: 2rem;
 
 	
 	padding-top: 2rem;

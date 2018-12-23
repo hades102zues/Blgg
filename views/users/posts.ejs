@@ -14,17 +14,19 @@
 	<main>
 		<div class="container">
 			<div class="post-list">
-				<%for(var i=0; i<7; i++){ %>
-					<article class="post-list__post">
-						<h2> Title </h2>
-						<div class="img-container">
-							<img src="https://farm1.staticflickr.com/353/19030898356_38b2108f6b_b.jpg" alt="an image"/>
-						</div>
-						<p>
-						  LoLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo tempor incididunt um  
-						<p>
-						<a href=""> Read >> </a>
-					</article>
+				<%if(userPosts.length){%>
+					<%for(let post of userPosts){ %>
+						<article class="post-list__post">
+							<h2> <%=post.title%> </h2>
+							<div class="img-container">
+								<img src="<%= post.imageurl%>" alt="an image"/>
+							</div>
+							<p class="description">
+							  <%=post.description%> 
+							<p>
+							<a href="/user/posts/post/<%=post.postid%>"> Read >> </a>
+						</article>
+					<%}%>
 				<%}%>
 			</div>
 		</div>
