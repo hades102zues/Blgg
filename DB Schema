@@ -1,0 +1,18 @@
+DB Schema
+
+DB Name: bleague
+
+Table: posts
+Columns:
+postid int(11) AI PK 
+email varchar(255) 
+title varchar(60) 
+description text 
+imageurl varchar(10000)
+
+Table: users
+Columns:
+id int(11) AI PK 
+name varchar(255) 
+email varchar(255) 
+password varchar(255)
